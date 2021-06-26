@@ -7,16 +7,7 @@ import MyApplication from './MyApplication'
 import FindCourse from './FindCourse'
 import ChangeStuInfo from './ChangeStuInfo'
 import StuChangePSW from './StuChangePSW'
-import AllCourse from './AllCourse'
-import CourseResource from './CourseResource'
-import Assignment from './Assignment'
-import Quiz from './Quiz'
-import HWanalysis from './HWanalysis'
-import PersonalResource from './PersonalResource'
-import Grade from './Grade'
 
-import onlinetest from './testcenter_stu/onlinetest';
-import testpaper from './testcenter_stu/testpaper';
 import {
   BarChartOutlined,
   CloudOutlined,
@@ -119,15 +110,6 @@ class StudentCenter extends React.Component {
                 <Route path="/StudentCenter/FindCourse" component={FindCourse}></Route>
                 <Route path="/StudentCenter/StuChangePSW" component={StuChangePSW}></Route>
                 <Route path="/StudentCenter/ChangeStuInfo" component={ChangeStuInfo}></Route>
-                <Route path="/StudentCenter/AllCourse" component={AllCourse}></Route> 
-                <Route path="/StudentCenter/CourseResource" component={CourseResource}></Route> 
-                <Route path="/StudentCenter/Assignment" component={Assignment}></Route> 
-                <Route path="/StudentCenter/Quiz" component={Quiz}></Route> 
-                <Route path="/StudentCenter/Grade" component={Grade}></Route> 
-                <Route path="/StudentCenter/PersonalResource" component={PersonalResource}></Route> 
-                <Route path="/StudentCenter/HWanalysis" component={HWanalysis}></Route> 
-                <Route exact path="StudentCenter/testcenter_stu" component={onlinetest} />
-                <Route path="StudentCenter/testcenter_stu/testpaper/:eid" component={testpaper} />
                 <Redirect to="/StudentCenter/StudentInfo"></Redirect>
               </Switch>
             </div>
