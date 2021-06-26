@@ -1,0 +1,1 @@
+export const serverUrl = "http://tian.com:8000"
