@@ -10,17 +10,6 @@ import FindCourse from './FindCourse'
 import ChangeTeaInfo from './ChangeTeaInfo'
 import TeaChangePSW from './TeaChangePSW'
 
-import CourseResource from './CourseResource'
-import AddHW from './AddHW'
-import HWMarking from './HWMarking'
-import PersonalResource from './PersonalResource'
-import Quiz from './Quiz'
-import GradeAnalysis from './GradeAnalysis'
-import Quizanalysis from './Quizanalysis'
-import HWanalysis from './HWanalysis'
-//import Analysischarts from './Analysischarts'
-import Studentanalysis from './Studentanalysis'
-
 import {
   BarChartOutlined,
   FileTextOutlined,
@@ -123,17 +112,6 @@ class TeacherCenter extends React.Component {
                 <Route path="/TeacherCenter/FindCourse" component={FindCourse}></Route>
                 <Route path="/TeacherCenter/TeaChangePSW" component={TeaChangePSW}></Route>
                 <Route path="/TeacherCenter/ChangeTeaInfo" component={ChangeTeaInfo}></Route>
-                <Route path="/TeacherCenter/CourseResource" component={CourseResource}></Route>
-                <Route path="/TeacherCenter/AddHW" component={AddHW}></Route>
-                <Route path="/TeacherCenter/HWMarking" component={HWMarking}></Route>
-                <Route path="/TeacherCenter/PersonalResource" component={PersonalResource}></Route>
-                <Route path="/TeacherCenter/GradeAnalysis" component={GradeAnalysis}></Route>
-                <Route path="/TeacherCenter/Quiz" component={Quiz}></Route>
-                <Route path="/TeacherCenter/Quizanalysis" component={Quizanalysis}></Route>
-                <Route path="/TeacherCenter/HWanalysis" component={HWanalysis}></Route>
-                <Route path="/TeacherCenter/Studentanalysis" component={Studentanalysis}></Route>
-                
-                <Redirect to="/TeacherCenter/TeacherInfo"></Redirect>
 
                 <Redirect to="/TeacherCenter/TeacherInfo"></Redirect>
               </Switch>
