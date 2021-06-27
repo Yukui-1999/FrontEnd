@@ -99,7 +99,7 @@ const requestSend=()=>{
     var d=_THIS.state.username;
   
     axios
-    .post('http://tian.com:8000/api/updatepsw', 
+    .post('http://127.0.0.1:8000/api/updatepsw', 
       transformFormData({
         ID:d,
         oldpsw: a.value,

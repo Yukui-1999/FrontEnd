@@ -32,7 +32,7 @@ export default class ForgetPSW extends Component {
         const type = this.state.type;
         console.log(type);
         axios
-            .post('http://tian.com:8000/api/findpsw',
+            .post('http://127.0.0.1:8000/api/findpsw',
                 transformFormData({
                     id: id,
                     IDcard: idcard,

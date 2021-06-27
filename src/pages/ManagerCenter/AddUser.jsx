@@ -94,7 +94,7 @@ export default class AddUser extends React.Component {
     sendRequest() {
         const _this = this;
         axios
-            .post('http://tian.com:8000/api/adduser', qs.stringify(_this.state),
+            .post('http://127.0.0.1:8000/api/adduser', qs.stringify(_this.state),
                 {
                     headers: { 'content-type': 'application/x-www-form-urlencoded' }
                 }
@@ -282,7 +282,7 @@ const transformFormData = (obj) => {
     }
 
     axios
-        .post('http://tian.com:8000/api/BatchInput',
+        .post('http://127.0.0.1:8000/api/BatchInput',
             transformFormData({
                 file: v1,
                 

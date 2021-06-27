@@ -4,70 +4,9 @@ import axios from 'axios'
 import { Upload, message} from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
-import{serverUrl} from '../../config';
+import { serverUrl } from '../../config';
+
 var _THIS;
-function getBase64(img, callback) {
-  const reader = new FileReader();
-  reader.addEventListener('load', () => callback(reader.result));
-  reader.readAsDataURL(img);
-}
-const props = {
-    name: "avatar",
-    showUploadList: false,//设置只上传一张图片，根据实际情况修改
-    customRequest: info => {//手动上传
-      const formData = new FormData();
-      
-      formData.append('avatar', info.file);//名字和后端接口名字对应
-
-      axios
-        .post('http://tian.com:8000/api/UpPhoto',
-            transformFormData({
-                data: formData.get('avatar'),
-            }),
-            {
-              headers: { 'content-type': 'application/x-www-form-urlencoded' }
-            }
-          ).then((response) => 
-            {
-
-          })
-    },
-    action:"http://localhost:3009/api/common/file_upload",
-    listType: "picture-card",
-    className: "avatar-uploader",
-    handleChange: info => {
-      if (info.file.status === 'uploading') {
-        this.setState({ loading: true });
-        return;
-      }
-      if (info.file.status === 'done') {
-        // Get this url from response in real world.
-        getBase64(info.file.originFileObj, imageUrl =>
-          this.setState({
-            imageUrl,
-            loading: false,
-          }),
-        );
-        console.log(info);
-      }
-    },
-
-    beforeUpload: file => {//控制上传图片格式
-      const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-
-      if (!isJpgOrPng) {
-        message.error('您只能上传JPG/PNG 文件!');
-        return;
-      }
-      const isLt2M = file.size / 1024 / 1024 < 2;
-      if (!isLt2M) {
-        message.error('图片大小必须小于2MB!');
-        return;
-      }
-      return isJpgOrPng && isLt2M;
-    },
-  };
-
 
   const uploadButton = (
     <div>
@@ -75,6 +14,23 @@ const props = {
       <div style={{ marginTop: 8 }}>Upload</div>
     </div>
   );
+
+  function getBase64(img, callback) {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => callback(reader.result));
+    reader.readAsDataURL(img);
+  }
+  function beforeUpload(file) {
+    const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJpgOrPng) {
+      message.error('You can only upload JPG/PNG file!');
+    }
+    const isLt2M = file.size / 1024 / 1024 < 2;
+    if (!isLt2M) {
+      message.error('Image must smaller than 2MB!');
+    }
+    return isJpgOrPng && isLt2M;
+  }
 
 export default class ChangeStuInfo extends React.Component {
   constructor() {
@@ -140,13 +96,14 @@ export default class ChangeStuInfo extends React.Component {
 
                 <br /><br />
                 <Form.Item>
-                  <Upload name="avatar"
+                  <Upload name="file"
                         listType="picture-card"
-                        className="avatar-uploader"
+                        className="file-uploader"
                         showUploadList={false}
-                        action={ serverUrl + "/resources" }
+                        action="/api/UpPhoto"
+                        beforeUpload={beforeUpload}
                         onChange={info => this.handleChange(info)}>
-                        {imageUrl ? <img src={serverUrl+imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
+                        {imageUrl ? <img src={serverUrl+imageUrl} alt="file" style={{ width: '100%' }} /> : uploadButton}
                     </Upload>
                 </Form.Item>
                 
@@ -197,7 +154,7 @@ const transformFormData = (obj) => {
     }
 
     axios
-        .post('http://tian.com:8000/api/changeStu',
+        .post('http://127.0.0.1:8000/api/changeStu',
             transformFormData({
                 id: v1,
                 commu: v5

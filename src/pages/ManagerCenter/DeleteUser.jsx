@@ -40,7 +40,7 @@ export default class DeleteUser extends React.Component {
     handleDelete() {
         const _this = this;
         axios
-            .post('http://tian.com:8000/api/deleteuser',
+            .post('http://127.0.0.1:8000/api/deleteuser',
                 qs.stringify({ id: _this.state.id }),
                 {
                     headers: { 'content-type': 'application/x-www-form-urlencoded' }

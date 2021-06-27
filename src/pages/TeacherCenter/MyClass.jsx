@@ -38,7 +38,7 @@ export default class MyClass extends Component {
         }
         
         console.log(params);
-        axios.get('http://tian.com:8000/api/show/',
+        axios.get('http://127.0.0.1:8000/api/show/',
         {params},
         {
             headers: { 'content-type': 'application/x-www-form-urlencoded' }  
@@ -113,7 +113,7 @@ export default class MyClass extends Component {
         }
         console.log(record);
         axios
-        .get('http://tian.com:8000/api/delete/',
+        .get('http://127.0.0.1:8000/api/delete/',
         {params},
         {
             headers: { 'content-type': 'application/x-www-form-urlencoded' }    
@@ -129,7 +129,7 @@ export default class MyClass extends Component {
             type:'teacher_ID'
 
         }
-        axios.get('http://tian.com:8000/api/show/',
+        axios.get('http://127.0.0.1:8000/api/show/',
         {params},
         {
             headers: { 'content-type': 'application/x-www-form-urlencoded' }  
