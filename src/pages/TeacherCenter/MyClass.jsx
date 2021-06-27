@@ -217,7 +217,18 @@ export default class MyClass extends Component {
                                 </a>
                         </Popconfirm>
                         
-                        <a>资源管理</a>
+                         <Link to="/TeacherCenter/CourseResource">
+                <a>资源管理</a>
+                </Link>
+                <Link to="/TeacherCenter/AddHW">
+        <a>发布作业</a>
+        </Link>
+        <Link to="/TeacherCenter/HWMarking">
+        <a>批改作业</a>
+        </Link>
+        <Link to="/TeacherCenter/Quiz">
+        <a>课堂测验</a>
+        </Link>
                         <Popconfirm
                             title="您确定要删除此课程吗"
                             onConfirm={this.requestDeleteSend.bind(this,record)}
