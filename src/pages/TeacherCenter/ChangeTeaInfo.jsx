@@ -162,7 +162,7 @@ const transformFormData = (obj) => {
   }
 
     axios
-        .post('http://tian.com:8000/api/changeTea',
+        .post('http://127.0.0.1:8000/api/changeTea',
             transformFormData({
                 id: v1,
                 commu: v2

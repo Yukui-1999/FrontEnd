@@ -31,7 +31,7 @@ const requestSendGet=()=>{
     type: coursefindtype
   }
   axios
-  .get('http://tian.com:8000/api/show/', 
+  .get('http://127.0.0.1:8000/api/show/', 
   {params},
   {
   headers: { 'content-type': 'application/x-www-form-urlencoded' }          

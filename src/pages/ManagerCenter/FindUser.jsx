@@ -45,7 +45,7 @@ export default class ChangeUser extends React.Component {
     sendRequest() {
         const _this = this;
         axios
-            .post('http://tian.com:8000/api/find',
+            .post('http://127.0.0.1:8000/api/find',
                 qs.stringify({
                     id: _this.state.id,
                     type: _this.state.type

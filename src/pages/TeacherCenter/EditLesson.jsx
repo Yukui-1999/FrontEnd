@@ -134,7 +134,7 @@ const requestSend=()=>{
   var cid=_THIS.state.course_ID;
 
   axios
-  .post('http://tian.com:8000/api/update', 
+  .post('http://127.0.0.1:8000/api/update', 
     transformFormData({
       ID:cid,
       name: c1.value,

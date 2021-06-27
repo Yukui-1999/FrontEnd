@@ -138,7 +138,7 @@ const requestSend = () => {
     }
 
     axios
-        .post('http://tian.com:8000/api/changeMan',
+        .post('http://127.0.0.1:8000/api/changeMan',
             transformFormData({
                 id: v1,
                 name: v2,

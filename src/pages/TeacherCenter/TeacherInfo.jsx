@@ -47,7 +47,7 @@ export default class StudentInfo extends Component {
     })
 
     axios
-      .post('http://tian.com:8000/api/getinformation',
+      .post('http://127.0.0.1:8000/api/getinformation',
         transformFormData({
           ID: name,
           type: tp

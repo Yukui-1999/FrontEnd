@@ -19,7 +19,7 @@ class upload extends React.Component {
     render(){
         return <div>
            <Upload
-               action="http://tian.com:8000/upload"
+               action="http://127.0.0.1:8000/upload"
                listType="picture-card"
                onChange={this.onChange} //0000
                fileList={this.state.fileList}

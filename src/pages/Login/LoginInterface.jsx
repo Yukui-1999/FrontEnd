@@ -35,7 +35,7 @@ export default class LoginInterface extends Component {
         const type = this.state.type;
         console.log(type);
         axios
-            .post('http://tian.com:8000/api/login',
+            .post('http://127.0.0.1:8000/api/login',
                 transformFormData({
                     ID: name,
                     PSW: passw,
@@ -53,7 +53,7 @@ export default class LoginInterface extends Component {
                 code = response.data.code;
                 if (code === 200) {
                     axios
-                        .post('http://tian.com:8000/api/systemlog',
+                        .post('http://127.0.0.1:8000/api/systemlog',
                             transformFormData({
                                 ID: name,
                                 message: "登录成功",
