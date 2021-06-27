@@ -7,7 +7,13 @@ import MyApplication from './MyApplication'
 import FindCourse from './FindCourse'
 import ChangeStuInfo from './ChangeStuInfo'
 import StuChangePSW from './StuChangePSW'
-
+import AllCourse from './AllCourse'
+import CourseResource from './CourseResource'
+import Assignment from './Assignment'
+import Quiz from './Quiz'
+import HWanalysis from './HWanalysis'
+import PersonalResource from './PersonalResource'
+import Grade from './Grade'
 import {
   BarChartOutlined,
   CloudOutlined,
@@ -62,7 +68,7 @@ class StudentCenter extends React.Component {
               <Link to={{pathname: '/StudentCenter/StudentInfo',state:{username:this.state.username, psw:this.state.psw, type:this.state.type}}}></Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-              课程资源
+              所有课程
               <Link to={{pathname: '/StudentCenter/AllCourse',state:{username:this.state.username, psw:this.state.psw, type:this.state.type}}}></Link>
           </Menu.Item>
             <Menu.Item key="3" icon={<UploadOutlined />}>
@@ -74,7 +80,9 @@ class StudentCenter extends React.Component {
             </Link>
           </Menu.Item>
             <Menu.Item key="5" icon={<BarChartOutlined />}>
+              <Link to={{pathname: '/StudentCenter/Grade',state:{username:this.state.username, psw:this.state.psw, type:this.state.type}}}>
               成绩查询
+            </Link>
           </Menu.Item>
             <Menu.Item key="6" icon={<BookOutlined />}>
               作业提交
@@ -110,6 +118,13 @@ class StudentCenter extends React.Component {
                 <Route path="/StudentCenter/FindCourse" component={FindCourse}></Route>
                 <Route path="/StudentCenter/StuChangePSW" component={StuChangePSW}></Route>
                 <Route path="/StudentCenter/ChangeStuInfo" component={ChangeStuInfo}></Route>
+                <Route path="/StudentCenter/AllCourse" component={AllCourse}></Route> 
+                <Route path="/StudentCenter/CourseResource" component={CourseResource}></Route> 
+                <Route path="/StudentCenter/Assignment" component={Assignment}></Route> 
+                <Route path="/StudentCenter/Quiz" component={Quiz}></Route> 
+                <Route path="/StudentCenter/Grade" component={Grade}></Route> 
+                <Route path="/StudentCenter/PersonalResource" component={PersonalResource}></Route> 
+                <Route path="/StudentCenter/HWanalysis" component={HWanalysis}></Route> 
                 <Redirect to="/StudentCenter/StudentInfo"></Redirect>
               </Switch>
             </div>
