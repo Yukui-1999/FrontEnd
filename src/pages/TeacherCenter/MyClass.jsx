@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Table, Space } from 'antd';
 import { Popconfirm, message } from 'antd';
 import axios from 'axios'
-
+import { Link} from 'react-router-dom';
 
 
 var data = [
